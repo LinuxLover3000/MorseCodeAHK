@@ -1,9 +1,9 @@
-string = hello
+inputbox message,Input Morse Message,Please input your morse message:
 
 ^x::ExitApp
 
 ^z::
-send %string%
+send %message%
 return
 
 a::
