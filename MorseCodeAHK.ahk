@@ -1,8 +1,8 @@
-inputbox message,Input Morse Message,Please input your morse message:`n(Leave the box blank to exit)
+inputbox message,Input Morse Message,Please input your morse message:
 if (message = null) {
-	ExitApp
+	msgbox Null
 } else {
-	msgbox Ready to send: %message% . Press CTRL + Q when ready!`n(You can close this box)
+	msgbox Ready to send: "%message%". Press CTRL + Q when ready!`n(You can close this box)
 }
 
 sendLong(){
@@ -34,12 +34,14 @@ sendMorse(msg){
 				sleep 300
 			}
 		}
-		sleep %dwellBetweenLetters%
+		sleep %dwellBetweenCharacters%
 	}
 }
 
-^x::ExitApp
+^x::
+	ExitApp
+return
 
-^z::
+^q::
 	sendMorse(message)
 return
