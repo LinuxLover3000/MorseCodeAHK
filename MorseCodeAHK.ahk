@@ -1,11 +1,51 @@
 inputbox message,Input Morse Message,Please input your morse message:
 
+
+dwell:=147
+sendLong(){
+	sleep 25
+	send {. down}
+	sleep 178
+	send {. up}
+}
+
+sendShort(){
+	sleep 25
+	send {. down}
+	sleep 25
+	send {. up}
+}
+
+
+
 ^x::ExitApp
 
 ^z::
-send %message%
+	sendShort()
+	sendShort()
+	sendShort()
+	sendShort()
+	sleep %dwell%
+	sendShort()
+	sleep %dwell%
+	sendShort()
+	sendLong()
+	sendShort()
+	sendShort()
+	sleep %dwell%
+	sendShort()
+	sendLong()
+	sendShort()
+	sendShort()
+	sleep %dwell%
+	sendLong()
+	sendLong()
+	sendLong()
+	;send %message%
 return
 
+
+/*
 a::
 
 send .
@@ -330,37 +370,4 @@ sleep 300
 
 return
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
